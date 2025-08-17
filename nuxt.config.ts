@@ -33,9 +33,20 @@ export default defineNuxtConfig({
 
   routeRules: {
     '/': { prerender: true },
-    '/blog/**': {
-      isr: true
-    },
+    '/blog/**': { prerender: true },
+  },
+  nitro: {
+    preset: 'cloudflare-pages',
+    cloudflare: {
+      pages: {
+        routes: {
+          exclude: [
+            // we know that all docs and blog pages are pre-rendered
+            '/blog/*'
+          ]
+        }
+      }
+    }
   },
 
   eslint: {
