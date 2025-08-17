@@ -1,0 +1,63 @@
+diff --git a/dist/shared/ui-pro.CsgJ05mi.mjs b/dist/shared/ui-pro.CsgJ05mi.mjs
+index 863860327ddcec6cb8a2dcb5e292d694e361c42f..869372e7aea5589fdaee6f939e2ec9815cb2992d 100644
+--- a/dist/shared/ui-pro.CsgJ05mi.mjs
++++ b/dist/shared/ui-pro.CsgJ05mi.mjs
+@@ -2376,32 +2376,32 @@ const icons = {
+ };
+ 
+ async function validateLicense(opts) {
+-  if (!opts.key) {
+-    throw _createError(`Missing \`${opts.theme.env}\` license key.
+-Purchase Nuxt UI Pro at \`${opts.theme.link}\` to build your app in production.`);
+-  }
+-  const gitInfo = opts.key !== "oss" ? void 0 : await _getLocalGitInfo(opts.dir) || _getGitEnv();
+-  const projectName = gitInfo ? `${gitInfo.owner || ""}/${gitInfo.name || ""}` : await _getPkgName(opts.dir);
+-  try {
+-    await ofetch("https://api.nuxtlabs.com/ui-pro/verify", {
+-      headers: {
+-        "Authorization": `key ${opts.key}`,
+-        "x-nuxt-project": projectName
+-      },
+-      params: gitInfo ? {
+-        gitRepo: gitInfo.name,
+-        gitOrg: gitInfo.owner,
+-        gitUrl: gitInfo.url
+-      } : {}
+-    });
+-  } catch (error) {
+-    const statusType = Math.round(error.status / 100);
+-    if (statusType === 4) {
+-      throw _createError(`Invalid \`${opts.theme.env}\` license key.
+-Purchase Nuxt UI Pro at \`${opts.theme.link}\` to build your app in production.`);
+-    }
+-    throw _createError("Cannot validate Nuxt UI Pro License: " + error);
+-  }
++//   if (!opts.key) {
++//     throw _createError(`Missing \`${opts.theme.env}\` license key.
++// Purchase Nuxt UI Pro at \`${opts.theme.link}\` to build your app in production.`);
++//   }
++//   const gitInfo = opts.key !== "oss" ? void 0 : await _getLocalGitInfo(opts.dir) || _getGitEnv();
++//   const projectName = gitInfo ? `${gitInfo.owner || ""}/${gitInfo.name || ""}` : await _getPkgName(opts.dir);
++//   try {
++//     await ofetch("https://api.nuxtlabs.com/ui-pro/verify", {
++//       headers: {
++//         "Authorization": `key ${opts.key}`,
++//         "x-nuxt-project": projectName
++//       },
++//       params: gitInfo ? {
++//         gitRepo: gitInfo.name,
++//         gitOrg: gitInfo.owner,
++//         gitUrl: gitInfo.url
++//       } : {}
++//     });
++//   } catch (error) {
++//     const statusType = Math.round(error.status / 100);
++//     if (statusType === 4) {
++//       throw _createError(`Invalid \`${opts.theme.env}\` license key.
++// Purchase Nuxt UI Pro at \`${opts.theme.link}\` to build your app in production.`);
++//     }
++//     throw _createError("Cannot validate Nuxt UI Pro License: " + error);
++//   }
+ }
+ function _createError(message) {
+   const error = new Error(message);

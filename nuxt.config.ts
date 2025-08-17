@@ -6,8 +6,12 @@ export default defineNuxtConfig({
     '@nuxt/ui-pro',
     '@nuxt/content',
     'nuxt-og-image',
-    'nuxt-llms'
+    'nuxt-llms',
+    '@nuxthub/core'
   ],
+  hub:{
+    database:true,
+  },
 
   devtools: {
     enabled: true
