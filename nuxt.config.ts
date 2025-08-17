@@ -9,8 +9,8 @@ export default defineNuxtConfig({
     'nuxt-llms',
     '@nuxthub/core'
   ],
-  hub:{
-    database:true,
+  hub: {
+    database: true,
   },
 
   devtools: {
@@ -31,14 +31,11 @@ export default defineNuxtConfig({
 
   compatibilityDate: '2024-07-11',
 
-  nitro: {
-    prerender: {
-      routes: [
-        '/'
-      ],
-      crawlLinks: true,
-      autoSubfolderIndex: false
-    }
+  routeRules: {
+    '/': { prerender: true },
+    '/blog/**': {
+      isr: true
+    },
   },
 
   eslint: {

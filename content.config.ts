@@ -9,6 +9,7 @@ export default defineContentConfig({
     docs: defineCollection({
       type: 'page',
       source: {
+        prefix: '/blog',
         include: '**',
         exclude: ['index.md']
       },
