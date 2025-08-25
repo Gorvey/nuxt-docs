@@ -9,10 +9,6 @@ export default defineNuxtConfig({
     'nuxt-llms',
     '@nuxthub/core'
   ],
-  hub: {
-    database: true,
-  },
-
   devtools: {
     enabled: true
   },
@@ -20,6 +16,9 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
 
   content: {
+    preview: {
+      api: 'https://api.nuxt.studio'
+    },
     build: {
       markdown: {
         toc: {
@@ -29,12 +28,12 @@ export default defineNuxtConfig({
     }
   },
 
-  compatibilityDate: '2024-07-11',
-
   routeRules: {
     '/': { prerender: true },
-    '/blog/**': { prerender: true },
+    '/blog/**': { prerender: true }
   },
+
+  compatibilityDate: '2024-07-11',
   nitro: {
     preset: 'cloudflare-pages',
     cloudflare: {
@@ -47,6 +46,10 @@ export default defineNuxtConfig({
         }
       }
     }
+  },
+
+  hub: {
+    database: true
   },
 
   eslint: {
@@ -65,7 +68,8 @@ export default defineNuxtConfig({
   llms: {
     domain: 'https://docs-template.nuxt.dev/',
     title: 'Nuxt Docs Template',
-    description: 'A template for building documentation with Nuxt UI Pro and Nuxt Content.',
+    description:
+      'A template for building documentation with Nuxt UI Pro and Nuxt Content.',
     full: {
       title: 'Nuxt Docs Template - Full Documentation',
       description: 'This is the full documentation for the Nuxt Docs Template.'
